@@ -194,7 +194,7 @@ details summary ~ * {
                             },
                             body: await encodeValues({
                                 name: x.name,
-                                addedTokens: 250,
+                                addedTokens: 250000,
                                 addedXp: 300
                             }, e.secret)
                         });
@@ -226,7 +226,7 @@ details summary ~ * {
                     safari: 25,
                     aquatic: 20,
                     bot: 20,
-                    space: 20,
+                    space: 1,
                     breakfast: 15,
                     medieval: 15,
                     wonderland: 15
@@ -368,7 +368,7 @@ details summary ~ * {
         },
         factory: {
             'All Mega Bot': () => {
-                let blooks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].fill({ name: "Mega Bot", color: "#d71f27", class: "🤖", rarity: "Legendary", cash: [80000, 430000, 4200000, 62000000, 1000000000], time: [5, 5, 3, 3, 3], price: [7000000, 120000000, 1900000000, 35000000000], active: false, level: 4, bonus: 5.5 })
+                let blooks = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1].fill({ name: "Mega Bot", color: "#d71f27", class: "🤖", rarity: "Legendary", cash: [80000, 430000, 4200000, 62000000, 1000000000], time: [5, 5, 3, 3, 3], price: [7000000, 120000000, 1900000000, 35000000000], active: false, level: 4, bonus: 5.5 })
                 reactHandler().stateNode.setState({ blooks });
             },
             'Remove Glitches': () => {
@@ -377,10 +377,10 @@ details summary ~ * {
                     bites: 0,
                     ads: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     hazards: ["", "", "", "", ""],
-                    lol: false,
-                    joke: false,
-                    slow: false,
-                    dance: false,
+                    lol: true,
+                    joke: true,
+                    slow: true,
+                    dance: true,
                     popUpAmount: 0,
                 });
             },
@@ -388,7 +388,7 @@ details summary ~ * {
                 reactHandler().stateNode.state.blooks.forEach(blook => { blook.level = 4 });
             },
             'Set Cash': () => {
-                let cash = Number(parseFloat(prompt('How much cash do you want?')));
+                let cash = Number(parseFloat(prompt('How much cash do you want?'999999999)));
                 reactHandler().stateNode.setState({ cash });
             },
         },
@@ -465,7 +465,7 @@ details summary ~ * {
                 reactHandler().stateNode.setState({ round });
             },
             'Set Tokens': () => {
-                let tokens = Number(parseFloat(prompt('How many tokens do you want?')));
+                let tokens = Number(parseFloat(prompt('How many tokens do you want?'999999999)));
                 reactHandler().stateNode.setState({ tokens });
             }
         },
@@ -653,4 +653,5 @@ details summary ~ * {
         e.code == 'KeyE' && (GUI.hidden = !GUI.hidden)
     };
     addEventListener('keypress', toggleHidden);
+
 })()
